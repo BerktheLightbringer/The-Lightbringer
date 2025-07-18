@@ -43,13 +43,13 @@ body {
 }
 
 a {
-  color: #7ED321;
+  color: #f29c1f;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #7ED321;
+  color: #f29c1f;
   outline: none;
   text-decoration: none;
 }
@@ -266,7 +266,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-nav.scrolled ul li.btn-cta a span {
   border: none !important;
-  background: #c72f19;
+  background: #d4341b;
   padding: 4px 20px;
   color: #fff;
 }
@@ -407,7 +407,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
 }
 .gtco-cover a {
-  color: #7ED321;
+  color: #f29c1f;
 }
 .gtco-cover a:hover {
   color: white;
