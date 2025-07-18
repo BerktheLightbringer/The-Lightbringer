@@ -2,26 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Lightbringer – Independent Solar Expertise</title>
 
-  <!-- 🌐 SEO Tags -->
-  <meta name="description" content="Independent engineering and technical due diligence for solar PV projects. Bankable insights from concept to commissioning.">
-  <meta name="keywords" content="The Lightbringer, solar PV, engineering, due diligence, technical audit, yield assessment, bankability">
-  <meta name="author" content="The Lightbringer">
-
-  <!-- 🔗 Social Media Meta -->
-  <meta property="og:title" content="The Lightbringer – Solar PV Expertise" />
-  <meta property="og:description" content="We provide proof over promises. Solar engineering, audits, and advisory." />
-  <meta property="og:image" content="logo.png" />
-  <meta property="og:url" content="https://yourwebsite.com" />
+  <!-- SEO & Social -->
+  <meta name="description" content="Independent engineering and technical due diligence for solar PV projects.">
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:title" content="The Lightbringer" />
+  <meta property="og:description" content="Independent expertise for a solar-powered future." />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-  <!-- Google Fonts (Optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -32,18 +21,19 @@
       --bg-light: #fff;
     }
 
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; background: var(--bg-light); color: var(--text-dark); }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
+    /* Scroll Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: var(--primary);
+      width: 0%;
+      z-index: 9999;
     }
 
     header {
@@ -51,27 +41,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 2rem;
+      padding: 1rem 2rem;
       border-bottom: 1px solid #ddd;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
-    .logo-section {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-section img {
-      height: 50px;
-      margin-right: 1rem;
-    }
-
-    .logo-section h1 {
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
+    .logo-section { display: flex; align-items: center; }
+    .logo-section img { height: 50px; margin-right: 1rem; }
+    .logo-section h1 { color: var(--primary); }
 
     nav a {
       margin-left: 1.2rem;
@@ -79,40 +58,18 @@
       color: var(--text-dark);
       font-weight: 600;
     }
+    nav a:hover { color: var(--primary); }
 
-    nav a:hover {
-      color: var(--primary);
-    }
+    section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+    section h2 { color: var(--primary); font-size: 2rem; margin-bottom: 1rem; text-align: center; }
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .slogan {
-      margin-top: 2rem;
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: var(--accent);
-    }
+    .hero p, .slogan { text-align: center; max-width: 800px; margin: auto; }
+    .slogan { margin-top: 1rem; font-weight: bold; color: var(--accent); }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
     }
 
@@ -120,13 +77,49 @@
       background: #f5f5f5;
       border-radius: 10px;
       padding: 1.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      opacity: 0; /* Animate later */
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
 
-    .card h3 {
-      color: var(--primary);
-      margin-bottom: 0.8rem;
+    .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin-top: 2rem;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      border-radius: 10px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .carousel-buttons {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .carousel-buttons button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
     }
 
     form {
@@ -140,19 +133,14 @@
       padding: 0.8rem;
       border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    textarea {
-      resize: vertical;
     }
 
     .contact-btn {
       background-color: var(--primary);
       color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
+      padding: 0.8rem 1.2rem;
       font-size: 1rem;
+      border: none;
       border-radius: 6px;
       cursor: pointer;
     }
@@ -161,84 +149,114 @@
       background-color: #f2f2f2;
       text-align: center;
       padding: 2rem;
-      margin-top: 3rem;
-      color: #555;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-slide img { height: 200px; }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo-section">
-    <img src="logo.png" alt="Logo" />
-    <h1>The Lightbringer</h1>
-  </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <div id="progress-bar"></div>
 
-<section id="home" class="hero">
-  <h2>🌞 Independent Expertise for a Solar-Powered Future ⚡</h2>
-  <p>
-    In an industry full of bold claims, we stand for proof over promises.<br />
-    At The Lightbringer, we deliver independent engineering and due diligence services that power real decisions.
-  </p>
-  <p class="slogan">🛠️ Precision. ⚙️ Performance. 📊 Predictability.</p>
-</section>
+  <header>
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="Logo">
+      <h1>The Lightbringer</h1>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="services">
-  <h2 style="color: var(--primary); text-align:center;">Our Services</h2>
-  <div class="card-grid">
-    <div class="card"><h3>🔹 Technical Due Diligence</h3><p>Independent review of technical risks & documentation.</p></div>
-    <div class="card"><h3>🔹 Yield Assessments</h3><p>Bankable production forecasting and simulations.</p></div>
-    <div class="card"><h3>🔹 Tendering & Cost Eval</h3><p>Vendor selection & CAPEX/OPEX benchmarking.</p></div>
-    <div class="card"><h3>🔹 Design Reviews</h3><p>Electrical, civil, structural compliance assessment.</p></div>
-    <div class="card"><h3>🔹 Site Inspections</h3><p>Construction monitoring for quality assurance.</p></div>
-    <div class="card"><h3>🔹 Commissioning Oversight</h3><p>Performance testing before commercial handover.</p></div>
-    <div class="card"><h3>🔹 Operational Auditing</h3><p>Post-commission health-checks & performance optimization.</p></div>
-  </div>
-</section>
+  <section id="home" class="hero">
+    <h2>🌞 Independent Expertise for a Solar-Powered Future ⚡</h2>
+    <p>We stand for proof over promises. Engineering clarity and confidence in every solar project.</p>
+    <p class="slogan">🛠️ Precision. ⚙️ Performance. 📊 Predictability.</p>
+  </section>
 
-<section id="contact">
-  <h2 style="color: var(--primary); text-align:center;">Contact Us</h2>
-  <p style="text-align:center;">Need a technical partner for your solar project? Let’s talk.</p>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="card-grid">
+      <div class="card"><h3>🔹 Technical Due Diligence</h3><p>Technical risk evaluation and documentation audit.</p></div>
+      <div class="card"><h3>🔹 Yield Assessment</h3><p>Forecast production with simulations and climate data.</p></div>
+      <div class="card"><h3>🔹 Tendering & Cost Eval</h3><p>Vendor review and CAPEX/OPEX benchmarking.</p></div>
+      <div class="card"><h3>🔹 Design Review</h3><p>Compliance and optimization of electrical & civil layout.</p></div>
+      <div class="card"><h3>🔹 Site Inspections</h3><p>Construction monitoring and technical validation.</p></div>
+      <div class="card"><h3>🔹 Commissioning Oversight</h3><p>Verification before grid connection.</p></div>
+      <div class="card"><h3>🔹 Operational Audit</h3><p>Performance and issue diagnosis for running systems.</p></div>
+    </div>
+  </section>
 
-  <!-- Google Form Submit -->
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSfEXAMPLE_FORM_URL/viewform" method="POST" target="_blank">
-    <input type="text" name="entry.123456789" placeholder="Your Name" required />
-    <input type="email" name="entry.987654321" placeholder="Your Email" required />
-    <textarea name="entry.1122334455" rows="5" placeholder="Your Message" required></textarea>
-    <button class="contact-btn" type="submit">Send Message</button>
-  </form>
-</section>
+  <section id="projects">
+    <h2>Project Showcase</h2>
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide"><img src="assets/solar1.jpg" alt="Project 1"></div>
+        <div class="carousel-slide"><img src="assets/solar2.jpg" alt="Project 2"></div>
+        <div class="carousel-slide"><img src="assets/solar3.jpg" alt="Project 3"></div>
+      </div>
+    </div>
+    <div class="carousel-buttons">
+      <button onclick="prevSlide()">←</button>
+      <button onclick="nextSlide()">→</button>
+    </div>
+  </section>
 
-<footer>
-  <p>© 2025 The Lightbringer. All rights reserved. #SolarEnergy #CleanEnergy #PVProjects</p>
-</footer>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center;">We're here to help your project succeed.</p>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><input name="bot-field" /></p>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button class="contact-btn" type="submit">Send Message</button>
+    </form>
+  </section>
 
-<!-- GSAP Animations -->
-<script>
-  window.addEventListener('load', () => {
-    gsap.from(".hero h2", { y: -30, opacity: 0, duration: 1 });
-    gsap.from(".hero p", { y: 20, opacity: 0, delay: 0.5, duration: 1 });
+  <footer>
+    <p>© 2025 The Lightbringer. #SolarEnergy #GreenFuture #CleanEnergy</p>
+  </footer>
 
-    gsap.to(".card", {
-      scrollTrigger: {
-        trigger: ".card-grid",
-        start: "top 80%",
-        toggleActions: "play none none none"
-      },
-      opacity: 1,
-      stagger: 0.2,
-      duration: 0.6,
-      ease: "power2.out"
-    });
-  });
-</script>
+  <script>
+    // Scroll indicator
+    window.onscroll = function () {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // Carousel logic
+    const track = document.getElementById('carouselTrack');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const width = track.offsetWidth;
+      track.style.transform = `translateX(-${currentIndex * width}px)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % track.children.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + track.children.length) % track.children.length;
+      updateCarousel();
+    }
+
+    window.addEventListener('resize', updateCarousel);
+  </script>
 
 </body>
 </html>
