@@ -2,21 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Lightbringer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lightbringer – Independent Solar Expertise</title>
+
+  <!-- 🌐 SEO Tags -->
+  <meta name="description" content="Independent engineering and technical due diligence for solar PV projects. Bankable insights from concept to commissioning.">
+  <meta name="keywords" content="The Lightbringer, solar PV, engineering, due diligence, technical audit, yield assessment, bankability">
+  <meta name="author" content="The Lightbringer">
+
+  <!-- 🔗 Social Media Meta -->
+  <meta property="og:title" content="The Lightbringer – Solar PV Expertise" />
+  <meta property="og:description" content="We provide proof over promises. Solar engineering, audits, and advisory." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Google Fonts (Optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --primary: #c33a00;
       --accent: #8e2c00;
       --highlight: #f9c74f;
       --text-dark: #222;
-      --text-light: #fff;
+      --bg-light: #fff;
     }
 
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
     html {
@@ -24,8 +41,8 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
       color: var(--text-dark);
     }
 
@@ -73,10 +90,6 @@
       margin: auto;
     }
 
-    .hero {
-      text-align: center;
-    }
-
     .hero h2 {
       font-size: 2.5rem;
       color: var(--primary);
@@ -96,15 +109,6 @@
       color: var(--accent);
     }
 
-    .services {
-      text-align: center;
-    }
-
-    .services h2 {
-      color: var(--primary);
-      margin-bottom: 2rem;
-    }
-
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -116,12 +120,8 @@
       background: #f5f5f5;
       border-radius: 10px;
       padding: 1.5rem;
-      transition: transform 0.2s;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
+      opacity: 0; /* Animate later */
     }
 
     .card h3 {
@@ -129,40 +129,11 @@
       margin-bottom: 0.8rem;
     }
 
-    .contact-section {
-      text-align: center;
-    }
-
-    .contact-section h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .contact-section p {
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-btn {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .contact-btn:hover {
-      background-color: var(--accent);
-    }
-
     form {
-      margin-top: 2rem;
       display: grid;
-      grid-template-columns: 1fr;
       gap: 1rem;
       max-width: 600px;
-      margin-inline: auto;
+      margin: 2rem auto 0;
     }
 
     input, textarea {
@@ -176,6 +147,16 @@
       resize: vertical;
     }
 
+    .contact-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
     footer {
       background-color: #f2f2f2;
       text-align: center;
@@ -183,93 +164,81 @@
       margin-top: 3rem;
       color: #555;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo-section">
-      <img src="assets/logo.png" alt="Logo">
-      <h1>The Lightbringer</h1>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo-section">
+    <img src="assets/logo.png" alt="Logo" />
+    <h1>The Lightbringer</h1>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section id="home" class="hero">
-    <h2>🌞 Independent Expertise for a Solar-Powered Future ⚡</h2>
-    <p>
-      In an industry full of bold claims, we stand for proof over promises.<br>
-      At The Lightbringer, we deliver independent engineering and due diligence services that power real decisions.
-    </p>
-    <p class="slogan">🛠️ Precision. ⚙️ Performance. 📊 Predictability.</p>
-  </section>
+<section id="home" class="hero">
+  <h2>🌞 Independent Expertise for a Solar-Powered Future ⚡</h2>
+  <p>
+    In an industry full of bold claims, we stand for proof over promises.<br />
+    At The Lightbringer, we deliver independent engineering and due diligence services that power real decisions.
+  </p>
+  <p class="slogan">🛠️ Precision. ⚙️ Performance. 📊 Predictability.</p>
+</section>
 
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>🔹 Technical Due Diligence</h3>
-        <p>Independent review of technical risks & documentation.</p>
-      </div>
-      <div class="card">
-        <h3>🔹 Yield Assessments</h3>
-        <p>Production simulations & bankable resource analysis.</p>
-      </div>
-      <div class="card">
-        <h3>🔹 Tendering & Cost Evaluation</h3>
-        <p>Vendor comparison, CAPEX/OPEX benchmarking.</p>
-      </div>
-      <div class="card">
-        <h3>🔹 Design Reviews</h3>
-        <p>Electrical/civil layout & compliance verification.</p>
-      </div>
-      <div class="card">
-        <h3>🔹 Site Inspections</h3>
-        <p>Construction monitoring & contractor compliance.</p>
-      </div>
-      <div class="card">
-        <h3>🔹 Commissioning Oversight</h3>
-        <p>On-site supervision and performance validation.</p>
-      </div>
-      <div class="card">
-        <h3>🔹 Operational Auditing</h3>
-        <p>Long-term health checks and optimization studies.</p>
-      </div>
-    </div>
-  </section>
+<section id="services">
+  <h2 style="color: var(--primary); text-align:center;">Our Services</h2>
+  <div class="card-grid">
+    <div class="card"><h3>🔹 Technical Due Diligence</h3><p>Independent review of technical risks & documentation.</p></div>
+    <div class="card"><h3>🔹 Yield Assessments</h3><p>Bankable production forecasting and simulations.</p></div>
+    <div class="card"><h3>🔹 Tendering & Cost Eval</h3><p>Vendor selection & CAPEX/OPEX benchmarking.</p></div>
+    <div class="card"><h3>🔹 Design Reviews</h3><p>Electrical, civil, structural compliance assessment.</p></div>
+    <div class="card"><h3>🔹 Site Inspections</h3><p>Construction monitoring for quality assurance.</p></div>
+    <div class="card"><h3>🔹 Commissioning Oversight</h3><p>Performance testing before commercial handover.</p></div>
+    <div class="card"><h3>🔹 Operational Auditing</h3><p>Post-commission health-checks & performance optimization.</p></div>
+  </div>
+</section>
 
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <p>If you're working on a solar PV project and need a technical partner you can trust, reach out below.</p>
-    <button class="contact-btn" onclick="document.getElementById('form-anchor').scrollIntoView({behavior: 'smooth'})">Contact Us!</button>
+<section id="contact">
+  <h2 style="color: var(--primary); text-align:center;">Contact Us</h2>
+  <p style="text-align:center;">Need a technical partner for your solar project? Let’s talk.</p>
 
-    <div id="form-anchor"></div>
+  <!-- Google Form Submit -->
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSfEXAMPLE_FORM_URL/viewform" method="POST" target="_blank">
+    <input type="text" name="entry.123456789" placeholder="Your Name" required />
+    <input type="email" name="entry.987654321" placeholder="Your Email" required />
+    <textarea name="entry.1122334455" rows="5" placeholder="Your Message" required></textarea>
+    <button class="contact-btn" type="submit">Send Message</button>
+  </form>
+</section>
 
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button class="contact-btn" type="submit">Send Message</button>
-    </form>
-  </section>
+<footer>
+  <p>© 2025 The Lightbringer. All rights reserved. #SolarEnergy #CleanEnergy #PVProjects</p>
+</footer>
 
-  <footer>
-    <p>© 2025 The Lightbringer. All rights reserved. #SolarEnergy #CleanEnergy #PVProjects</p>
-  </footer>
+<!-- GSAP Animations -->
+<script>
+  window.addEventListener('load', () => {
+    gsap.from(".hero h2", { y: -30, opacity: 0, duration: 1 });
+    gsap.from(".hero p", { y: 20, opacity: 0, delay: 0.5, duration: 1 });
+
+    gsap.to(".card", {
+      scrollTrigger: {
+        trigger: ".card-grid",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      },
+      opacity: 1,
+      stagger: 0.2,
+      duration: 0.6,
+      ease: "power2.out"
+    });
+  });
+</script>
 
 </body>
 </html>
