@@ -43,7 +43,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="assets/logo.png" alt="Logo">
+      <img src="assetslogo.png" alt="Logo">
       <strong>The Lightbringer</strong>
     </div>
     <nav>
@@ -72,21 +72,28 @@
   <section id="projects">
     <h2 data-i18n="projects_title">Project Showcase</h2>
     <div class="gallery">
-      <a href="assets/solar1.jpg" data-lightbox="projects"><img src="assets/solar1.jpg" alt="Solar 1"></a>
-      <a href="assets/solar2.jpg" data-lightbox="projects"><img src="assets/solar2.jpg" alt="Solar 2"></a>
-      <a href="assets/solar3.jpg" data-lightbox="projects"><img src="assets/solar3.jpg" alt="Solar 3"></a>
+      <a href="assets/solar1.jpg" data-lightbox="projects"><img src="assetssolar1.jpg" alt="Solar 1"></a>
+      <a href="assets/solar2.jpg" data-lightbox="projects"><img src="assetssolar2.jpg" alt="Solar 2"></a>
+      <a href="assets/solar3.jpg" data-lightbox="projects"><img src="assetssolar3.jpg" alt="Solar 3"></a>
+      <a href="assets/solar3.jpg" data-lightbox="projects"><img src="assetssolar4.jpg" alt="Solar 4"></a>
+      <a href="assets/solar3.jpg" data-lightbox="projects"><img src="assetssolar5.jpg" alt="Solar 5"></a>
+      <a href="assets/solar3.jpg" data-lightbox="projects"><img src="assetssolar6.jpg" alt="Solar 6"></a>
     </div>
   </section>
 
   <section id="contact">
     <h2 data-i18n="contact_title">Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact">
-      <p hidden><input name="bot-field"></p>
-      <input name="name" type="text" placeholder="Your Name" required>
-      <input name="email" type="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" data-i18n="send_btn">Send</button>
+    <form name="contact" netlify>
+  <p>
+    <label>Name <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
     </form>
   </section>
 
