@@ -18,8 +18,8 @@
     // ABOUT SLIDER
     $('body').vegas({
         slides: [
-            { src: 'images/slide-image01.jpg' },
-            { src: 'images/slide-image02.jpg' }
+            { src: 'images/slide-image01.jfif' },
+            { src: 'images/slide-image02.jfif' }
         ],
         timer: false,
         transition: [ 'zoomOut', ]
