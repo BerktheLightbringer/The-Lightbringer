@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>The Lightbringer</title>
     <style>
         body {
@@ -10,92 +10,122 @@
             font-family: 'Segoe UI', sans-serif;
             background-color: #c33a00;
             color: #f9c74f;
+            scroll-behavior: smooth;
         }
 
+        /* Header + Navbar */
         header {
             display: flex;
             align-items: center;
-            padding: 1.5rem 2rem;
+            justify-content: space-between;
             background-color: #8e2c00;
-            color: #f9c74f;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header img {
-            height: 60px;
-            margin-right: 1rem;
+            height: 50px;
             border-radius: 8px;
         }
 
-        h1 {
-            font-size: 2rem;
+        nav a {
+            color: #f9c74f;
+            margin-left: 1.5rem;
+            text-decoration: none;
             font-weight: bold;
         }
 
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        /* Sections */
         section {
-            padding: 2rem;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
-        section p,
-        section ul {
-            font-size: 1rem;
+        section p {
+            max-width: 800px;
             line-height: 1.6;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
+        .section-image {
+            margin-top: 1rem;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         footer {
             text-align: center;
-            padding: 1rem;
+            padding: 2rem;
             background-color: #8e2c00;
-            font-size: 0.9rem;
-            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="Untitled design.png" alt="The Lightbringer Logo">
-        <h1>The Lightbringer</h1>
-    </header>
+<header>
+    <div style="display: flex; align-items: center;">
+        <img src="Untitled design.png" alt="Logo" />
+        <h1 style="margin-left: 1rem;">The Lightbringer</h1>
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#energy">Energy Solutions</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <section>
-        <h2>Independent Engineering for Solar Projects</h2>
-        <p>
-            The Lightbringer provides end-to-end technical services for solar PV projects,
-            delivering certainty, bankability, and long-term performance across all stages
-            of development and operation.
-        </p>
-    </section>
+<section id="home">
+    <h2>Welcome to The Lightbringer</h2>
+    <p>Empowering solar projects with independent engineering excellence.</p>
+    <img class="section-image" src="img/sample.jpg" alt="Solar Field"/>
+</section>
 
-    <section>
-        <h2>Our Services</h2>
-        <ul>
-            <li>🔹 Technical Due Diligence & Investment Review</li>
-            <li>🔹 Yield Assessments & Performance Analysis</li>
-            <li>🔹 Tendering Support & Cost Evaluation</li>
-            <li>🔹 Design Reviews & Engineering Advisory</li>
-            <li>🔹 Construction Monitoring & Site Inspections</li>
-            <li>🔹 Test & Commissioning Supervision</li>
-            <li>🔹 Operational Auditing</li>
-        </ul>
-    </section>
+<section id="about">
+    <h2>About Us</h2>
+    <p>We are a team of solar engineers, analysts, and project consultants committed to providing unbiased technical services across the renewable energy sector.</p>
+    <img class="section-image" src="img/sample.jpg" alt="About Image"/>
+</section>
 
-    <footer>
-        <p>© 2025 The Lightbringer. All rights reserved.</p>
-    </footer>
+<section id="energy">
+    <h2>Energy Solutions</h2>
+    <p>From technical due diligence to performance optimization, we ensure every solar asset reaches its full potential.</p>
+    <img class="section-image" src="img/sample.jpg" alt="Energy Solution"/>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <p>We’ve worked on over 120 solar PV projects worldwide, delivering certainty and performance to investors and developers alike.</p>
+    <img class="section-image" src="img/sample.jpg" alt="Projects"/>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>If you're developing or operating a solar project and need a technical partner you can trust, reach out today.</p>
+    <p>Email: info@lightbringer.com</p>
+    <p>Phone: +1 234 567 8900</p>
+</section>
+
+<footer>
+    <p>© 2025 The Lightbringer. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
