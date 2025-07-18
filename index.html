@@ -7,9 +7,10 @@
   <style>
     :root {
       --primary: #c33a00;
-      --dark: #8e2c00;
-      --text: #f9c74f;
-      --bg-light: #fff3e0;
+      --accent: #8e2c00;
+      --highlight: #f9c74f;
+      --text-dark: #222;
+      --text-light: #fff;
     }
 
     * {
@@ -24,46 +25,46 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: var(--primary);
-      color: var(--text);
-      line-height: 1.6;
+      background-color: #fff;
+      color: var(--text-dark);
     }
 
     header {
-      background-color: var(--dark);
-      padding: 1rem 2rem;
+      background: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #ddd;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
     }
 
-    .logo-area {
+    .logo-section {
       display: flex;
       align-items: center;
     }
 
-    .logo-area img {
+    .logo-section img {
       height: 50px;
-      border-radius: 8px;
+      margin-right: 1rem;
     }
 
-    .logo-area h1 {
+    .logo-section h1 {
       font-size: 1.5rem;
-      margin-left: 0.8rem;
+      color: var(--primary);
     }
 
     nav a {
-      color: var(--text);
-      margin-left: 1.5rem;
+      margin-left: 1.2rem;
       text-decoration: none;
+      color: var(--text-dark);
       font-weight: 600;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--primary);
     }
 
     section {
@@ -72,22 +73,36 @@
       margin: auto;
     }
 
-    section h2 {
-      font-size: 2.2rem;
+    .hero {
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
       margin-bottom: 1rem;
     }
 
-    section p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
     }
 
-    .section-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-top: 1rem;
+    .slogan {
+      margin-top: 2rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .services {
+      text-align: center;
+    }
+
+    .services h2 {
+      color: var(--primary);
+      margin-bottom: 2rem;
     }
 
     .card-grid {
@@ -98,28 +113,75 @@
     }
 
     .card {
-      background-color: var(--dark);
-      border-radius: 12px;
+      background: #f5f5f5;
+      border-radius: 10px;
       padding: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
     .card:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
     }
 
     .card h3 {
+      color: var(--primary);
       margin-bottom: 0.8rem;
-      font-size: 1.3rem;
+    }
+
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .contact-section p {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .contact-btn:hover {
+      background-color: var(--accent);
+    }
+
+    form {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
     }
 
     footer {
+      background-color: #f2f2f2;
       text-align: center;
-      background-color: var(--dark);
       padding: 2rem;
       margin-top: 3rem;
-      font-size: 0.9rem;
+      color: #555;
     }
 
     @media (max-width: 768px) {
@@ -127,10 +189,8 @@
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-      }
-
-      .logo-area h1 {
-        font-size: 1.2rem;
+        justify-content: center;
+        margin-top: 1rem;
       }
     }
   </style>
@@ -138,82 +198,77 @@
 <body>
 
   <header>
-    <div class="logo-area">
-      <img src="Untitled design.png" alt="Logo" />
+    <div class="logo-section">
+      <img src="assets/logo.png" alt="Logo">
       <h1>The Lightbringer</h1>
     </div>
     <nav>
       <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#energy">Solutions</a>
-      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="home">
-    <h2>Welcome to The Lightbringer</h2>
+  <section id="home" class="hero">
+    <h2>🌞 Independent Expertise for a Solar-Powered Future ⚡</h2>
     <p>
-      Empowering solar projects with independent engineering excellence.
-      Our mission is to bring certainty to solar investments by delivering bankable,
-      accurate, and trusted technical assessments.
+      In an industry full of bold claims, we stand for proof over promises.<br>
+      At The Lightbringer, we deliver independent engineering and due diligence services that power real decisions.
     </p>
-    <img class="section-image" src="img/sample.jpg" alt="Solar Panel Field">
+    <p class="slogan">🛠️ Precision. ⚙️ Performance. 📊 Predictability.</p>
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      We are a team of experienced engineers and analysts dedicated to the growth of clean energy.
-      With global experience and local insight, we ensure every solar PV project reaches its maximum potential.
-    </p>
-    <img class="section-image" src="img/sample.jpg" alt="Team">
-  </section>
-
-  <section id="energy">
-    <h2>Energy Solutions</h2>
+  <section id="services" class="services">
+    <h2>Our Services</h2>
     <div class="card-grid">
       <div class="card">
-        <h3>Technical Due Diligence</h3>
-        <p>Independent review of technical documentation and project risk.</p>
+        <h3>🔹 Technical Due Diligence</h3>
+        <p>Independent review of technical risks & documentation.</p>
       </div>
       <div class="card">
-        <h3>Yield Assessment</h3>
-        <p>Accurate production forecasts using meteorological data and simulations.</p>
+        <h3>🔹 Yield Assessments</h3>
+        <p>Production simulations & bankable resource analysis.</p>
       </div>
       <div class="card">
-        <h3>Cost Evaluation</h3>
-        <p>Capital & O&M cost benchmarking and tender comparison support.</p>
+        <h3>🔹 Tendering & Cost Evaluation</h3>
+        <p>Vendor comparison, CAPEX/OPEX benchmarking.</p>
       </div>
       <div class="card">
-        <h3>Design Review</h3>
-        <p>Assessment of electrical, civil and structural design for compliance and optimization.</p>
+        <h3>🔹 Design Reviews</h3>
+        <p>Electrical/civil layout & compliance verification.</p>
       </div>
       <div class="card">
-        <h3>Commissioning Oversight</h3>
-        <p>Site supervision and performance verification at final handover.</p>
+        <h3>🔹 Site Inspections</h3>
+        <p>Construction monitoring & contractor compliance.</p>
+      </div>
+      <div class="card">
+        <h3>🔹 Commissioning Oversight</h3>
+        <p>On-site supervision and performance validation.</p>
+      </div>
+      <div class="card">
+        <h3>🔹 Operational Auditing</h3>
+        <p>Long-term health checks and optimization studies.</p>
       </div>
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Our Projects</h2>
-    <p>
-      From utility-scale solar farms to distributed rooftop systems, we’ve worked across continents
-      and climates. Our involvement brings clarity, confidence, and credibility to every stakeholder.
-    </p>
-    <img class="section-image" src="img/sample.jpg" alt="Projects Showcase">
-  </section>
-
-  <section id="contact">
+  <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
-    <p>Looking to get in touch? Let’s make your project bankable.</p>
-    <p><strong>Email:</strong> info@lightbringer.com</p>
-    <p><strong>Phone:</strong> +1 234 567 8900</p>
+    <p>If you're working on a solar PV project and need a technical partner you can trust, reach out below.</p>
+    <button class="contact-btn" onclick="document.getElementById('form-anchor').scrollIntoView({behavior: 'smooth'})">Contact Us!</button>
+
+    <div id="form-anchor"></div>
+
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button class="contact-btn" type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
-    <p>© 2025 The Lightbringer. All rights reserved.</p>
+    <p>© 2025 The Lightbringer. All rights reserved. #SolarEnergy #CleanEnergy #PVProjects</p>
   </footer>
 
 </body>
