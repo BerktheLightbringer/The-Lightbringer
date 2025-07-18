@@ -2,261 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Lightbringer – Independent Solar Expertise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lightbringer</title>
 
-  <!-- SEO & Social -->
-  <meta name="description" content="Independent engineering and technical due diligence for solar PV projects.">
-  <meta property="og:image" content="assets/logo.png" />
-  <meta property="og:title" content="The Lightbringer" />
-  <meta property="og:description" content="Independent expertise for a solar-powered future." />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Meta & SEO -->
+  <meta name="description" content="Independent engineering and technical services for solar PV projects.">
+  <meta name="keywords" content="solar, engineering, due diligence, yield, audit">
+  <meta name="author" content="The Lightbringer">
+
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
 
   <style>
     :root {
       --primary: #c33a00;
       --accent: #8e2c00;
-      --highlight: #f9c74f;
-      --text-dark: #222;
-      --bg-light: #fff;
+      --bg: #fff;
+      --text: #222;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', sans-serif; background: var(--bg-light); color: var(--text-dark); }
-
-    /* Scroll Progress Bar */
-    #progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      background: var(--primary);
-      width: 0%;
-      z-index: 9999;
-    }
-
-    header {
-      background: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo-section { display: flex; align-items: center; }
-    .logo-section img { height: 50px; margin-right: 1rem; }
-    .logo-section h1 { color: var(--primary); }
-
-    nav a {
-      margin-left: 1.2rem;
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 600;
-    }
+    body { margin: 0; font-family: sans-serif; background: var(--bg); color: var(--text); }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid #ddd; position: sticky; top: 0; background: white; z-index: 100; }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 40px; margin-right: 1rem; }
+    nav a { margin: 0 1rem; text-decoration: none; color: var(--text); font-weight: bold; }
     nav a:hover { color: var(--primary); }
-
+    .lang-toggle { margin-left: 1rem; cursor: pointer; }
     section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
-    section h2 { color: var(--primary); font-size: 2rem; margin-bottom: 1rem; text-align: center; }
-
-    .hero p, .slogan { text-align: center; max-width: 800px; margin: auto; }
-    .slogan { margin-top: 1rem; font-weight: bold; color: var(--accent); }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: #f5f5f5;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
-
-    /* Carousel */
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      max-width: 100%;
-      margin-top: 2rem;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      flex-shrink: 0;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      border-radius: 10px;
-      height: 400px;
-      object-fit: cover;
-    }
-
-    .carousel-buttons {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .carousel-buttons button {
-      margin: 0 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    form {
-      display: grid;
-      gap: 1rem;
-      max-width: 600px;
-      margin: 2rem auto 0;
-    }
-
-    input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .contact-btn {
-      background-color: var(--primary);
-      color: white;
-      padding: 0.8rem 1.2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: #f2f2f2;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .carousel-slide img { height: 200px; }
-    }
+    h2 { color: var(--primary); text-align: center; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .card { background: #f3f3f3; border-radius: 8px; padding: 1.2rem; }
+    .card h3 { color: var(--accent); }
+    form { display: grid; gap: 1rem; max-width: 600px; margin: auto; }
+    input, textarea { padding: 0.8rem; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; }
+    button { background: var(--primary); color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .gallery a img { width: 300px; border-radius: 6px; }
   </style>
 </head>
-
 <body>
-
-  <div id="progress-bar"></div>
-
   <header>
-    <div class="logo-section">
+    <div class="logo">
       <img src="assets/logo.png" alt="Logo">
-      <h1>The Lightbringer</h1>
+      <strong>The Lightbringer</strong>
     </div>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#home" data-i18n="nav_home">Home</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <span class="lang-toggle" onclick="toggleLang()">EN/TR</span>
     </nav>
   </header>
 
-  <section id="home" class="hero">
-    <h2>🌞 Independent Expertise for a Solar-Powered Future ⚡</h2>
-    <p>We stand for proof over promises. Engineering clarity and confidence in every solar project.</p>
-    <p class="slogan">🛠️ Precision. ⚙️ Performance. 📊 Predictability.</p>
+  <section id="home">
+    <h2 data-i18n="home_title">Independent Expertise for a Solar-Powered Future</h2>
+    <p data-i18n="home_desc" style="text-align:center; max-width:700px; margin:auto;">We provide bankable solar engineering and project due diligence.</p>
   </section>
 
   <section id="services">
-    <h2>Our Services</h2>
+    <h2 data-i18n="services_title">Our Services</h2>
     <div class="card-grid">
-      <div class="card"><h3>🔹 Technical Due Diligence</h3><p>Technical risk evaluation and documentation audit.</p></div>
-      <div class="card"><h3>🔹 Yield Assessment</h3><p>Forecast production with simulations and climate data.</p></div>
-      <div class="card"><h3>🔹 Tendering & Cost Eval</h3><p>Vendor review and CAPEX/OPEX benchmarking.</p></div>
-      <div class="card"><h3>🔹 Design Review</h3><p>Compliance and optimization of electrical & civil layout.</p></div>
-      <div class="card"><h3>🔹 Site Inspections</h3><p>Construction monitoring and technical validation.</p></div>
-      <div class="card"><h3>🔹 Commissioning Oversight</h3><p>Verification before grid connection.</p></div>
-      <div class="card"><h3>🔹 Operational Audit</h3><p>Performance and issue diagnosis for running systems.</p></div>
+      <div class="card"><h3 data-i18n="s1_title">Technical Due Diligence</h3><p data-i18n="s1_desc">Review of risks and documentation.</p></div>
+      <div class="card"><h3 data-i18n="s2_title">Yield Assessment</h3><p data-i18n="s2_desc">Production forecast analysis.</p></div>
+      <div class="card"><h3 data-i18n="s3_title">Cost Evaluation</h3><p data-i18n="s3_desc">CAPEX/OPEX benchmarking.</p></div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Project Showcase</h2>
-    <div class="carousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide"><img src="assets/solar1.jpg" alt="Project 1"></div>
-        <div class="carousel-slide"><img src="assets/solar2.jpg" alt="Project 2"></div>
-        <div class="carousel-slide"><img src="assets/solar3.jpg" alt="Project 3"></div>
-      </div>
-    </div>
-    <div class="carousel-buttons">
-      <button onclick="prevSlide()">←</button>
-      <button onclick="nextSlide()">→</button>
+    <h2 data-i18n="projects_title">Project Showcase</h2>
+    <div class="gallery">
+      <a href="assets/solar1.jpg" data-lightbox="projects"><img src="assets/solar1.jpg" alt="Solar 1"></a>
+      <a href="assets/solar2.jpg" data-lightbox="projects"><img src="assets/solar2.jpg" alt="Solar 2"></a>
+      <a href="assets/solar3.jpg" data-lightbox="projects"><img src="assets/solar3.jpg" alt="Solar 3"></a>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p style="text-align:center;">We're here to help your project succeed.</p>
+    <h2 data-i18n="contact_title">Contact Us</h2>
     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
-      <p hidden><input name="bot-field" /></p>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
+      <p hidden><input name="bot-field"></p>
+      <input name="name" type="text" placeholder="Your Name" required>
+      <input name="email" type="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button class="contact-btn" type="submit">Send Message</button>
+      <button type="submit" data-i18n="send_btn">Send</button>
     </form>
   </section>
 
-  <footer>
-    <p>© 2025 The Lightbringer. #SolarEnergy #GreenFuture #CleanEnergy</p>
+  <footer style="text-align:center; padding:2rem; background:#f4f4f4;">
+    <p>&copy; 2025 The Lightbringer</p>
   </footer>
 
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <!-- Language Toggle JS -->
   <script>
-    // Scroll indicator
-    window.onscroll = function () {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById("progress-bar").style.width = scrolled + "%";
+    const langData = {
+      en: {
+        nav_home: "Home",
+        nav_services: "Services",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+        home_title: "Independent Expertise for a Solar-Powered Future",
+        home_desc: "We provide bankable solar engineering and project due diligence.",
+        services_title: "Our Services",
+        s1_title: "Technical Due Diligence",
+        s1_desc: "Review of risks and documentation.",
+        s2_title: "Yield Assessment",
+        s2_desc: "Production forecast analysis.",
+        s3_title: "Cost Evaluation",
+        s3_desc: "CAPEX/OPEX benchmarking.",
+        projects_title: "Project Showcase",
+        contact_title: "Contact Us",
+        send_btn: "Send"
+      },
+      tr: {
+        nav_home: "Anasayfa",
+        nav_services: "Hizmetler",
+        nav_projects: "Projeler",
+        nav_contact: "İletişim",
+        home_title: "Güneş Enerjisi İçin Bağımsız Uzmanlık",
+        home_desc: "Güneş enerjisi projeleri için bankaya uygun mühendislik ve teknik danışmanlık sunuyoruz.",
+        services_title: "Hizmetlerimiz",
+        s1_title: "Teknik İnceleme",
+        s1_desc: "Risk ve dokümantasyon analizi.",
+        s2_title: "Verim Tahmini",
+        s2_desc: "Üretim simülasyon ve analizleri.",
+        s3_title: "Maliyet Değerlendirme",
+        s3_desc: "CAPEX/OPEX karşılaştırmaları.",
+        projects_title: "Proje Galerisi",
+        contact_title: "Bize Ulaşın",
+        send_btn: "Gönder"
+      }
     };
 
-    // Carousel logic
-    const track = document.getElementById('carouselTrack');
-    let currentIndex = 0;
-
-    function updateCarousel() {
-      const width = track.offsetWidth;
-      track.style.transform = `translateX(-${currentIndex * width}px)`;
+    let currentLang = "en";
+    function toggleLang() {
+      currentLang = currentLang === "en" ? "tr" : "en";
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[currentLang][key]) {
+          el.innerText = langData[currentLang][key];
+        }
+      });
     }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % track.children.length;
-      updateCarousel();
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + track.children.length) % track.children.length;
-      updateCarousel();
-    }
-
-    window.addEventListener('resize', updateCarousel);
   </script>
-
 </body>
 </html>
